@@ -1,0 +1,193 @@
+<div class="span12">
+<pre class="prettyprint linenums pre-scrollable lang-css">
+/*
+ * Styles for the Justin C Dalton landing page
+ *
+ */
+
+/* ==========================================================================
+   Imports 
+   ========================================================================== */
+
+@import "../bootstrap/less/bootstrap.less";
+
+/* ==========================================================================
+   Fonts 
+   ========================================================================== */
+
+@import url(http://fonts.googleapis.com/css?family=Amaranth:400,700);
+
+@font-face {
+  font-family: 'Junction';
+  src: local("Junction Regular");
+  src: url('fonts/Junction-webfont.eot');
+  src: url('fonts/Junction-webfont.eot?#iefix') format('eot'),
+  url('fonts/Junction-webfont.woff') format('woff'),
+  url('fonts/Junction-webfont.ttf') format('truetype'),
+  url('fonts/Junction-webfont.svg#webfontQ1FnPBwb') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ==========================================================================
+   Less variables 
+   ========================================================================== */
+
+@phi: 1.618; // The golden ratio
+@blue: #00557f;
+@blueDark: #00334c;
+@orange: #995500;
+@background: #ccc;
+@navColor: #777;
+
+@fancySansFontFamily: "Amaranth", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/* ==========================================================================
+   Less mixins 
+   ========================================================================== */
+
+@drip-width: 1px;
+  
+.dripX (@index) when (@index > 0) {
+  .drip@{index} { .drip(@index); }
+  .dripX(@index - 1);
+}
+
+.drip (@index) {
+  @len: percentage(@index / 10);  
+  background: @grayDarker linear-gradient(to bottom, @background 6px, @grayDarker 15px, @grayDarker @len - 15, @background @len);
+  display: inline-block;
+  float: left;
+  height: 300px;
+  width: @drip-width;
+}
+
+.dripX(10);
+
+.last-drip {
+  margin-left: -(@drip-width);
+}
+
+.titleFontSize(@navFontSize) {
+  font-size: @navFontSize * @phi * 2;
+}
+  
+/* ==========================================================================
+   Base styles 
+   ========================================================================== */
+
+body {
+  background: @background;   
+}
+
+.main {
+  position: absolute;
+  top: (100%) / (@phi * 4);
+  width: 100%;
+}
+
+.uncentered {
+  position: relative;
+  top: auto;
+}
+
+/* ==========================================================================
+   Navigation 
+   ========================================================================== */
+@navFontSize: 2em;
+
+header {
+  margin: 0 0 15px;
+}
+
+nav {
+  text-align: center;
+}
+
+nav a {
+  color: @navColor;
+  font-family: @fancySansFontFamily;
+  font-size: @navFontSize;
+}
+
+nav a.active, nav a:focus {
+  color: @grayDark;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: @orange;
+  outline: none;
+  text-decoration: none;
+}
+
+.title {
+  .titleFontSize(@navFontSize);
+  margin: 0 3%;
+}
+
+/* ==========================================================================
+   Content boxes 
+   ========================================================================== */
+.content-box {
+  margin: 0 5px;
+}
+
+.content-head {
+  color: @blue;
+  display: inline-block;
+  font-size: 1.25em;
+  margin: 0 0 5px;
+  text-align: center;
+  width: 100%;
+}
+
+.content-head:hover, .content-head:focus {
+  color: @blue;
+  outline: none;
+  text-decoration: none;
+}
+
+.content-body {
+  display: none;
+  margin: 5px 0 0 5px;
+  text-align: left;
+}
+
+/* ==========================================================================
+   Responsive styles 
+   ========================================================================== */
+
+@media (max-width: 979px) {
+  @navFontSize: 1.5em;
+  
+  nav a {
+    font-size: @navFontSize;
+  }
+  
+  .title {
+    .titleFontSize(@navFontSize);
+  }
+}
+
+@media (max-width: 767px) {
+  .main {
+    position: relative;
+    top: auto;
+  }
+  
+  nav {
+    margin: 20px 0;
+  }
+  
+  nav a {
+    display: block;
+  }
+  
+  .title {
+    .titleFontSize(1.3em);
+    margin: 0;
+  }
+}
+</pre>
+</div>
