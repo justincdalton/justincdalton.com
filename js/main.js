@@ -1,22 +1,17 @@
-// add site-wide elements to jquery cache
-var hash = window.location.hash;
-var navs = $('nav a');
-var container = $('#container');
-var pages = container.find('.page');
-
-$('a').click(function() {
-	$(this).blur();
-});
-
 var home = function() {
 	var dripHeight = 300;
 	var delay = 300;
 	
 	// add elements to jquery cache
-	var contentBoxes = homeContent.find('div.homeContent-box');
-	var contentHeads = homeContent.find('a.homeContent-head');
-	var contentBodies = homeContent.find('p.homeContent-body');
-	var contentDrips = homeContent.find('div[class^=drip]');	
+	var hash = window.location.hash;
+	var navs = $('nav a');
+	var content = $('#content');
+	var pages = content.find('.page');
+	var homePage = pages.filter('#home');
+	var contentBoxes = homePage.find('div.content-box');
+	var contentHeads = homePage.find('a.content-head');
+	var contentBodies = homePage.find('p.content-body');
+	var contentDrips = homePage.find('div[class^=drip]');	
 	
 	var contentTimer;
 	
@@ -24,36 +19,30 @@ var home = function() {
 	var init = function() {
 		var self = this;
 		
-		// onload events
-		// show content on page load
-		if (hash == '#contact') {
-			switchNav(contactNav, contactContent);
-		} else {
-			switchNav(homeNav, homeContent);
-		}
+		// blur all links on click	
+		$('a').click(function() {
+			$(this).blur();
+		});
 		
-		
+		// show active page content on page load
+		$(function() {
+			loadPage(navs.filter('[href=' + (hash !== "" ? hash : '#home') +']'));	
+		});		
 				
-		// handle click on home nav link
-		homeNav.click(function() {
-			switchNav($(this), homeContent, contactContent);
+		// handle click on nav link
+		navs.click(function() {
+			loadPage($(this));
 			return false;
 		});
 		
-		// handle click on contactContent nav link
-		contactNav.click(function() {
-			switchNav($(this), contactContent, homeContent);
-			return false;
-		});
-		
-		// handle click event on 
+		// handle click event on content
 		contentHeads.click(function() {
-			toggleContent($(this).parent('div.homeContent-box'), false);
+			toggleContent($(this).parent('div.content-box'), false);
 			return false;
 		});
 		
 		contentHeads.mouseenter(function() {
-			var contentBox = $(this).parent('div.homeContent-box');			
+			var contentBox = $(this).parent('div.content-box');			
 			
 			if (contentTimer) {
 				clearTimeout(contentTimer);
@@ -66,16 +55,19 @@ var home = function() {
 		});
 	}
 	
-	var toggleContent = function(homeContent, keepSelected) {
+	var toggleContent = function(contentBox, keepSelected) {
 		var self = this;
 		
-		// get the homeContent body of the homeContent that was activated
-		var body = homeContent.find('p.homeContent-body');
+		// get the content body of the content that was activated
+		var body = contentBox.find('p.content-body');
 		
-		// if the selected homeContent was already visible set hideSelected to true so it doesn't re-show
+		// if the content is already in motion escape this function
+		if (body.is(':animated')) return;
+		
+		// if the selected content was already visible set hideSelected to true so it doesn't re-show
 		var hideSelected = body.is(':visible');
 		
-		// if the current homeContent was selected but keepSelected is true then do not hide the current homeContent 
+		// if the current content was selected but keepSelected is true then do not hide the current content 
 		keepSelected = hideSelected && keepSelected;
 		
 		if (!keepSelected) {			
@@ -91,7 +83,7 @@ var home = function() {
 	
 	var showContent = function(body, hideSelected, delay) {
 		if (!hideSelected) {
-			// if hideSelected is false show the activated homeContent
+			// if hideSelected is false show the activated content
 			setTimeout(function() {
 				contentDrips.animate({ height: dripHeight * 2 });
 			
@@ -103,23 +95,30 @@ var home = function() {
 		}
 	}
 		
-	var switchNav = function(nav, showContent, hideContent) {
-		if ()
-		
-		if (hideContent) {
-			hideContent.slideUp(function() {
-				showContent.slideDown();
-			});
-		} else if (showContent) {
-			showContent.slideDown();
-		}
+	var loadPage = function(nav) {
+		var page = nav.attr('href');
+		var hidePages = pages.not(page).filter(':visible');
+		var showPage = pages.filter(page);
 		
 		navs.not(nav).removeClass('active');
 		nav.addClass('active');
-	}
-	
-	var showProjects = function() {
 		
+		window.location.hash = page;
+		
+		if (page == '#projects' && showPage.is(':empty')) {
+			$.get('projects.html', function(data) {
+				showPage.html(data);
+				prettyPrint();
+			});
+		}
+		
+		if (hidePages.length > 0) {
+			hidePages.slideUp(function() {
+				showPage.slideDown();
+			});
+		} else {
+			showPage.slideDown();
+		}
 	}
 	
 	return {

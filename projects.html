@@ -1,4 +1,123 @@
 <div class="span12">
+	<h4>This is the future home for my projects!</h4>
+	
+	<p>Very soon there will links, samples, and info about the those projects. Whether they are work or play, and be they from the past, present, or future, if I was involved with them (and liked them) then you will be able to find them here.
+	For the time being, I can give you peek behind the curtains of this project! You know, the one you're looking at right now! So continue on if you'd like to take a look, but be warned: <strong>there is nothing but techy code nonsense ahead!</strong></p>
+	
+	
+	<h4>justincdalton.com code samples!</h4>
+	
+	<p>Alright, now that only the brave and the code junkies are left with us, let's take a look at some code! First up is the html, aka the guts of the site. You can see that I am using the grid system from <a href="http://twitter.github.io/bootstrap/" target="_blank">twitter bootstrap</a>, but otherwise everything is fairly straightforward.</p>
+
+<pre class="prettyprint linenums pre-scrollable lang-html">
+&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7]&gt;      &lt;html class="no-js lt-ie9 lt-ie8 lt-ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt;         &lt;html class="no-js lt-ie9 lt-ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;         &lt;html class="no-js lt-ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if gt IE 8]&gt;&lt;!--&gt; &lt;html class="no-js"&gt; &lt;!--&lt;![endif]--&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+        &lt;title&gt;Justin C Dalton&lt;/title&gt;
+        &lt;meta name="description" content=""&gt;
+        &lt;meta name="viewport" content="width=device-width"&gt;
+
+        &lt;link rel="stylesheet/less" href="css/main.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!--[if lt IE 7]&gt;
+            &lt;p class="chromeframe"&gt;You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href="http://browsehappy.com/"&gt;upgrade your browser&lt;/a&gt; or &lt;a href="http://www.google.com/chromeframe/?redirect=true"&gt;activate Google Chrome Frame&lt;/a&gt; to improve your experience.&lt;/p&gt;
+        &lt;![endif]--&gt;
+
+        &lt;!-- Add your site or application content here --&gt;
+        &lt;div class="main"&gt;
+	        &lt;div id="content" class="container"&gt;
+	        	&lt;header class="row"&gt;
+	        		&lt;nav class="span12"&gt;
+		        		&lt;a id="contactNav" href="#contact"&gt;Contact&lt;/a&gt;
+			        	&lt;a id="homeNav" href="#home" class="title"&gt;Justin C Dalton&lt;/a&gt;
+			        	&lt;a id="projectsNav" href="#projects"&gt;Projects&lt;/a&gt;
+		        	&lt;/nav&gt;
+	        	&lt;/header&gt;
+	        	
+	        	&lt;div id="home" class="row hide page"&gt;
+	        		&lt;div class="span3"&gt;
+	        			&lt;div class="drip6 hidden-phone"&gt;&lt;/div&gt;
+	        			&lt;div class="content-box"&gt;
+		        			&lt;a class="content-head" href="#"&gt;Web Developer&lt;/a&gt;
+		        			&lt;p class="content-body"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed felis massa. Integer hendrerit nunc eget dolor molestie in sodales tortor cursus. In ac odio nulla. Nunc ornare risus hendrerit ligula porta eget accumsan nisi cursus. Etiam facilisis, risus nec bibendum congue, risus felis venenatis libero, quis congue velit leo ut turpis. Maecenas quis lacus quam, at tincidunt odio. Morbi et quam erat, ut vehicula mauris. Nullam eros orci, iaculis non sollicitudin quis, porta vel leo. Fusce non tortor orci, in blandit massa. In nulla felis, tristique ac feugiat sed, sagittis et augue. &lt;/p&gt;
+	        			&lt;/div&gt;
+	        		&lt;/div&gt;
+	        		&lt;div class="span3"&gt;
+	        			&lt;div class="drip3 hidden-phone"&gt;&lt;/div&gt;
+	        			&lt;div class="content-box"&gt;
+		        			&lt;a class="content-head" href="#"&gt;Board Gamer&lt;/a&gt;
+		        			&lt;p class="content-body"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed felis massa. Integer hendrerit nunc eget dolor molestie in sodales tortor cursus. In ac odio nulla. Nunc ornare risus hendrerit ligula porta eget accumsan nisi cursus. Etiam facilisis, risus nec bibendum congue, risus felis venenatis libero, quis congue velit leo ut turpis. Maecenas quis lacus quam, at tincidunt odio. Morbi et quam erat, ut vehicula mauris. Nullam eros orci, iaculis non sollicitudin quis, porta vel leo. Fusce non tortor orci, in blandit massa. In nulla felis, tristique ac feugiat sed, sagittis et augue. &lt;/p&gt;
+		        		&lt;/div&gt;
+	        		&lt;/div&gt;
+	        		&lt;div class="span3"&gt;
+	        			&lt;div class="drip8 hidden-phone"&gt;&lt;/div&gt;
+	        			&lt;div class="content-box"&gt;
+		        			&lt;a class="content-head" href="#"&gt;Music Lover&lt;/a&gt;
+		        			&lt;p class="content-body"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed felis massa. Integer hendrerit nunc eget dolor molestie in sodales tortor cursus. In ac odio nulla. Nunc ornare risus hendrerit ligula porta eget accumsan nisi cursus. Etiam facilisis, risus nec bibendum congue, risus felis venenatis libero, quis congue velit leo ut turpis. Maecenas quis lacus quam, at tincidunt odio. Morbi et quam erat, ut vehicula mauris. Nullam eros orci, iaculis non sollicitudin quis, porta vel leo. Fusce non tortor orci, in blandit massa. In nulla felis, tristique ac feugiat sed, sagittis et augue. &lt;/p&gt;
+	        			&lt;/div&gt;
+	        		&lt;/div&gt;
+	        		&lt;div class="span3"&gt;
+	        			&lt;div class="drip4 hidden-phone"&gt;&lt;/div&gt;
+	        			&lt;div class="content-box"&gt;
+		        			&lt;a class="content-head" href="#"&gt;Sports Geek-er&lt;/a&gt;
+		        			&lt;p class="content-body"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed felis massa. Integer hendrerit nunc eget dolor molestie in sodales tortor cursus. In ac odio nulla. Nunc ornare risus hendrerit ligula porta eget accumsan nisi cursus. Etiam facilisis, risus nec bibendum congue, risus felis venenatis libero, quis congue velit leo ut turpis. Maecenas quis lacus quam, at tincidunt odio. Morbi et quam erat, ut vehicula mauris. Nullam eros orci, iaculis non sollicitudin quis, porta vel leo. Fusce non tortor orci, in blandit massa. In nulla felis, tristique ac feugiat sed, sagittis et augue. &lt;/p&gt;		        			
+	        			&lt;/div&gt;	        			
+	        		&lt;/div&gt;
+	        		&lt;div class="drip5 last-drip hidden-phone"&gt;&lt;/div&gt;
+	        	&lt;/div&gt;
+	        	
+	        	&lt;div id="contact" class="row hide page"&gt;
+	        		&lt;div class="span3"&gt;
+	        			&lt;div class="drip6 hidden-phone"&gt;&lt;/div&gt;
+	        			&lt;div class="content-box"&gt;
+		        			&lt;a class="content-head" href="#"&gt;Email&lt;/a&gt;		        			
+	        			&lt;/div&gt;
+	        		&lt;/div&gt;
+	        		&lt;div class="span3"&gt;
+	        			&lt;div class="drip3 hidden-phone"&gt;&lt;/div&gt;
+	        			&lt;div class="content-box"&gt;
+		        			&lt;a class="content-head" href="#"&gt;Twitter&lt;/a&gt;
+		        		&lt;/div&gt;
+	        		&lt;/div&gt;
+	        		&lt;div class="span3"&gt;
+	        			&lt;div class="drip8 hidden-phone"&gt;&lt;/div&gt;
+	        			&lt;div class="content-box"&gt;
+		        			&lt;a class="content-head" href="#"&gt;Google+&lt;/a&gt;
+	        			&lt;/div&gt;
+	        		&lt;/div&gt;
+	        		&lt;div class="span3"&gt;
+	        			&lt;div class="drip4 hidden-phone"&gt;&lt;/div&gt;
+	        			&lt;div class="content-box"&gt;
+		        			&lt;a class="content-head" href="#"&gt;Github&lt;/a&gt;		        			
+	        			&lt;/div&gt;	        			
+	        		&lt;/div&gt;
+	        		&lt;div class="drip5 last-drip hidden-phone"&gt;&lt;/div&gt;
+	        	&lt;/div&gt;
+	        	
+	        	&lt;div id="projects" class="row hide page"&gt;&lt;/div&gt;
+	        &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"&gt;&lt;/script&gt;
+        &lt;script&gt;window.jQuery || document.write('&lt;script src="js/vendor/jquery-1.9.1.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;
+        &lt;script src="js/vendor/google-code-prettify/prettify.js"&gt;&lt;/script&gt;
+        &lt;script src="js/main.js"&gt;&lt;/script&gt;        
+        
+        &lt;script type="text/javascript"&gt;
+        	home.init();
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>	
+
+<p>Next let's look at the skin of the site. The actual css is compiled from this <a href="http://lesscss.org/" target="_blank">less</a> file which also utilizes some of the bootstrap less variables.</p>
+
 <pre class="prettyprint linenums pre-scrollable lang-css">
 /*
  * Styles for the Justin C Dalton landing page
@@ -190,4 +309,134 @@ nav a:hover {
   }
 }
 </pre>
+
+<p>Lastly, sticking with the theme, here is the brain behind all of it. I am using plenty of <a href="http://jquery.com/" target="_blank">jQuery</a>, and you may notice that this particlar projects page is loading via ajax. So take a look at the fun stuff, the stuff that makes it all go "whoosh!"</p>
+
+<pre class="prettyprint linenums pre-scrollable lang-css">
+var home = function() {
+	var dripHeight = 300;
+	var delay = 300;
+	
+	// add elements to jquery cache
+	var hash = window.location.hash;
+	var navs = $('nav a');
+	var content = $('#content');
+	var pages = content.find('.page');
+	var homePage = pages.filter('#home');
+	var contentBoxes = homePage.find('div.content-box');
+	var contentHeads = homePage.find('a.content-head');
+	var contentBodies = homePage.find('p.content-body');
+	var contentDrips = homePage.find('div[class^=drip]');	
+	
+	var contentTimer;
+	
+	// public initialization method
+	var init = function() {
+		var self = this;
+		
+		// blur all links on click	
+		$('a').click(function() {
+			$(this).blur();
+		});
+		
+		// show active page content on page load
+		loadPage(navs.filter(hash ? '[href=' + hash +']' : '#home'));
+				
+		// handle click on nav link
+		navs.click(function() {
+			loadPage($(this));
+			return false;
+		});
+		
+		// handle click event on content
+		contentHeads.click(function() {
+			toggleContent($(this).parent('div.content-box'), false);
+			return false;
+		});
+		
+		contentHeads.mouseenter(function() {
+			var contentBox = $(this).parent('div.content-box');			
+			
+			if (contentTimer) {
+				clearTimeout(contentTimer);
+				contentTimer = null;
+			}
+			
+			contentTimer = setTimeout(function() {
+				toggleContent(contentBox, true);	
+			}, delay);					
+		});
+	}
+	
+	var toggleContent = function(contentBox, keepSelected) {
+		var self = this;
+		
+		// get the content body of the content that was activated
+		var body = contentBox.find('p.content-body');
+		
+		// if the selected content was already visible set hideSelected to true so it doesn't re-show
+		var hideSelected = body.is(':visible');
+		
+		// if the current content was selected but keepSelected is true then do not hide the current content 
+		keepSelected = hideSelected && keepSelected;
+		
+		if (!keepSelected) {			
+			contentBodies.filter(':visible').slideUp();
+		}
+		
+		if (contentDrips.height() == dripHeight) {
+			showContent(body, hideSelected, 0);
+		} else if (!keepSelected) {			
+			contentDrips.animate({ height: dripHeight }, { queue: false, complete: showContent(body, hideSelected, delay) });
+		}
+	}
+	
+	var showContent = function(body, hideSelected, delay) {
+		if (!hideSelected) {
+			// if hideSelected is false show the activated content
+			setTimeout(function() {
+				contentDrips.animate({ height: dripHeight * 2 });
+			
+				body.slideDown(function() {
+					$(this).scrollTop($(this).height());	
+				});				
+			}, delay);
+			
+		}
+	}
+		
+	var loadPage = function(nav) {
+		var page = nav.attr('href');
+		var hidePages = pages.not(page).filter(':visible');
+		var showPage = pages.filter(page);
+		
+		navs.not(nav).removeClass('active');
+		nav.addClass('active');
+		
+		window.location.hash = page;
+		
+		if (page == '#projects' && showPage.is(':empty')) {
+			$.get('projects.html', function(data) {
+				showPage.html(data);
+				prettyPrint();
+			});
+		}
+		
+		if (hidePages) {
+			hidePages.slideUp(function() {
+				showPage.slideDown();
+			});
+		} else {
+			showPage.slideDown();
+		}
+	}
+	
+	return {
+		// declare public methods here
+		init: init
+	}	
+}();
+
+</pre>
 </div>
+

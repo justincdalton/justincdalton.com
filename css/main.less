@@ -22,9 +22,10 @@
 
 @phi: 1.618; // The golden ratio
 @blue: #00557f;
-@blueDark: #00334c;
-@orange: #995500;
-@background: #ccc;
+@blueDark: #002233;
+@blueLight: #64B4DB;
+@orange: #B16200;
+@background: #E8EAF0;
 @navColor: #777;
 
 @fancySansFontFamily: "Amaranth", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -41,7 +42,8 @@
 }
 
 .drip (@index) {
-  @len: percentage(@index / 10);  
+  @len: percentage(@index / 10);
+  background: @grayDarker -webkit-linear-gradient(top, @background 6px, @grayDarker 15px, @grayDarker @len - 15, @background @len);
   background: @grayDarker linear-gradient(to bottom, @background 6px, @grayDarker 15px, @grayDarker @len - 15, @background @len);
   display: inline-block;
   float: left;
@@ -76,6 +78,14 @@ body {
 .uncentered {
   position: relative;
   top: auto;
+}
+
+/* ==========================================================================
+   Typography 
+   ========================================================================== */
+
+h4 {
+  margin-bottom: 0;
 }
 
 /* ==========================================================================
@@ -120,7 +130,7 @@ nav a.active, nav a:focus {
   margin: 0 5px;
 }
 
-.content-head {
+.content-head, .content-head:focus {
   color: @orange;
   display: inline-block;
   font-size: 1.25em;
@@ -129,14 +139,18 @@ nav a.active, nav a:focus {
   width: 100%;
 }
 
-#contact .content-head {
+.content-head:hover {
+  color: @orange;
+  outline: none;
+  text-decoration: none;
+}
+
+#contact .content-head, #contact .content-head:focus {
   color: @blue;
 }
 
-.content-head:hover, .content-head:focus {
-  color: @blue;
-  outline: none;
-  text-decoration: none;
+#contact .content-head:hover {
+  color: @blueDark;
 }
 
 .content-body {
@@ -150,6 +164,10 @@ nav a.active, nav a:focus {
    ========================================================================== */
 
 @media (max-width: 979px) {
+  .main {
+    top: (100%) / (@phi * 6);
+  }
+  
   @navFontSize: 1.5em;
   
   nav a {
@@ -167,6 +185,10 @@ nav a.active, nav a:focus {
     top: auto;
   }
   
+  .container {
+    margin: 0 10px;
+  }
+  
   nav {
     margin: 20px 0;
   }
@@ -178,6 +200,10 @@ nav a.active, nav a:focus {
   .title {
     .titleFontSize(1.3em);
     margin: 0;
+  }
+  
+  .content-box {
+    margin: 30px 0 0;
   }
 }
 
