@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'db468265182.db.1and1.com',
-			'database'  => 'db468265182',
-			'username'  => 'dbo468265182',
-			'password'  => 'password',
+			'host'      => 'localhost',
+			'database'  => 'justincdalton',
+			'username'  => 'site',
+			'password'  => 'jcdlocal',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
