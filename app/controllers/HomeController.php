@@ -17,7 +17,12 @@ class HomeController extends BaseController {
 
 	public function getIndex()
 	{
-		return View::make('hello');
+                $aboutContents = AboutContent::all();
+                $contactLinks = ContactLink::all();
+        
+                return View::make('home.index')
+                        ->with('aboutContents', $aboutContents)
+                        ->with('contactLinks', $contactLinks);
 	}
 
 }
