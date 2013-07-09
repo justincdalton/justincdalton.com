@@ -3,11 +3,10 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 08, 2013 at 10:46 PM
+-- Generation Time: Jul 08, 2013 at 11:30 PM
 -- Server version: 5.5.31-0ubuntu0.13.04.1
 -- PHP Version: 5.4.9-4ubuntu2.1
 
-SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -27,6 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `about_contents`
 --
 
+DROP TABLE IF EXISTS `about_contents`;
 CREATE TABLE IF NOT EXISTS `about_contents` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Title` varchar(50) NOT NULL,
@@ -50,6 +50,7 @@ INSERT INTO `about_contents` (`id`, `Title`, `Content`) VALUES
 -- Table structure for table `contact_links`
 --
 
+DROP TABLE IF EXISTS `contact_links`;
 CREATE TABLE IF NOT EXISTS `contact_links` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Text` varchar(50) NOT NULL,
@@ -73,6 +74,7 @@ INSERT INTO `contact_links` (`id`, `Text`, `Url`) VALUES
 -- Table structure for table `projects`
 --
 
+DROP TABLE IF EXISTS `projects`;
 CREATE TABLE IF NOT EXISTS `projects` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Title` varchar(250) NOT NULL,
@@ -96,6 +98,7 @@ INSERT INTO `projects` (`id`, `Title`, `Description`, `LinkUrl`, `LinkText`) VAL
 -- Table structure for table `slides`
 --
 
+DROP TABLE IF EXISTS `slides`;
 CREATE TABLE IF NOT EXISTS `slides` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `project_id` int(11) NOT NULL,
@@ -117,7 +120,6 @@ INSERT INTO `slides` (`id`, `project_id`, `Image`, `Caption`, `DisplayOrder`) VA
 (5, 1, 'style-customize.png', 'Theme customization is effortless and simple with the new portfolio styles', 5),
 (6, 2, 'ag-giving-home.png', 'The AG Giving home page allows you to quickly find a cause or minister to support', 1),
 (7, 2, 'ag-giving-message.png', 'It''s quick and easy to select a donation amount and support disaster recovery', 2);
-SET FOREIGN_KEY_CHECKS=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

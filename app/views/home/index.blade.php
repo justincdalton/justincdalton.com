@@ -12,10 +12,10 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <!--<link rel="stylesheet" href="{{ URL::to('css/main.css') }}" />-->
+        <link rel="stylesheet" href="{{ URL::to('css/main.css') }}" />
 
         <!-- LESS include for dev -->
-        <link rel="stylesheet/less" href="css/main.less">
+        <!--<link rel="stylesheet/less" href="css/main.less">
         
         <script type="text/javascript">
             less = {

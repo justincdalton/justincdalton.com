@@ -129,6 +129,7 @@ var home = function() {
 var projects = function() {
 	var init = function() {
 		Galleria.run('[id^=slideshow]', {
+			autoplay: 3000,
 			height: 1,
 			lightbox: true,
 			thumbnails: false

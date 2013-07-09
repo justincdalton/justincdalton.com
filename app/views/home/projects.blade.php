@@ -1,8 +1,21 @@
 <!-- loop through projects -->
 <div class="span12">
+<div class="row project">
+	<div class="span6 offset4">
+		<strong>To view a bit of my code, visit me on <a href="https://github.com/justincdalton" target="_blank">GitHub</a></strong>
+	</div>
+</div>
+
 <?php foreach($projects as $project) { ?>
-    <div class="row">
-    	<div class="span5">
+    <div class="row project">
+	    <div class="span6">
+	    	<h4>{{ $project->Title }}</h4>
+	    	{{ $project->Description }}
+
+	    	<a href="{{ $project->LinkUrl }}" target="_blank">{{ $project->LinkText }}</a>
+	    </div>
+
+    	<div class="span5 offset1">
 	    	<div id="slideshow{{ $project->id }}">
 	    		<?php foreach($project->slides as $slide) { ?>
 	    			<img src="{{ asset('img/slideshows/' . $slide->Image) }}" alt="" data-description="{{ $slide->Caption }}" />
@@ -12,15 +25,11 @@
 				<a class="carousel-control right" href="#slideshow{{ $project->id }}" data-slide="next">&rsaquo;</a>
 	    	</div>
 	    </div>
-
-	    <div class="span6 offset1">
-	    	<h4>{{ $project->Title }}</h4>
-	    	{{ $project->Description }}
-
-	    	<a href="{{ $project->LinkUrl }}">{{ $project->LinkText }}</a>
-	    </div>
     </div>
 <?php } ?>
+<div class="row project">
+	<div class="span6 offset5"><h4>More to come!</h4></div>
+</div>
 </div>
 
 <script src="{{ asset('js/vendor/galleria/galleria-1.2.9.js') }}"></script>
