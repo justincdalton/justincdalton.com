@@ -106,9 +106,8 @@ var home = function() {
 		window.location.hash = page;
 		
 		if (page == '#projects' && showPage.is(':empty')) {
-			$.get('projects.html', function(data) {
-				showPage.html(data);
-				prettyPrint();
+			$.get('index.php/projects', function(data) {
+				showPage.html(data).slideDown();
 			});
 		}
 		
@@ -121,6 +120,21 @@ var home = function() {
 		}
 	}
 	
+	return {
+		// declare public methods here
+		init: init
+	}	
+}();
+
+var projects = function() {
+	var init = function() {
+		Galleria.run('[id^=slideshow]', {
+			height: 1,
+			lightbox: true,
+			thumbnails: false
+		});
+	}
+
 	return {
 		// declare public methods here
 		init: init

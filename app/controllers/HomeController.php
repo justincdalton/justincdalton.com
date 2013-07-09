@@ -17,12 +17,20 @@ class HomeController extends BaseController {
 
 	public function getIndex()
 	{
-                $aboutContents = AboutContent::all();
-                $contactLinks = ContactLink::all();
-        
-                return View::make('home.index')
-                        ->with('aboutContents', $aboutContents)
-                        ->with('contactLinks', $contactLinks);
+        $aboutContents = AboutContent::all();
+        $contactLinks = ContactLink::all();
+
+        return View::make('home.index')
+                ->with('aboutContents', $aboutContents)
+                ->with('contactLinks', $contactLinks);
+	}
+
+	public function getProjects()
+	{
+		$projects = Project::all();
+
+		return View::make('home.projects')
+				->with('projects', $projects);
 	}
 
 }

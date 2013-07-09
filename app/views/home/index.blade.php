@@ -12,10 +12,10 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="{{ URL::to('css/main.css') }}" />
+        <!--<link rel="stylesheet" href="{{ URL::to('css/main.css') }}" />-->
 
         <!-- LESS include for dev -->
-        <!-- <link rel="stylesheet/less" href="css/main.less">
+        <link rel="stylesheet/less" href="css/main.less">
         
         <script type="text/javascript">
             less = {
@@ -44,14 +44,14 @@
                 <nav class="span12">
                     <a id="contactNav" href="#contact">Contact</a>
                     <a id="homeNav" href="#home" class="title">Justin C Dalton</a>
-                    <a id="projectsNav" href="https://github.com/justincdalton">Projects</a>
+                    <a id="projectsNav" href="#projects">Projects</a>
                 </nav>
             </header>
 
             <div id="home" class="row hide page">
                 <?php foreach($aboutContents as $aboutContent) { ?>
                     <div class="span3">
-                    <div class="drip{{ rand(3,8) }} hidden-phone"></div>
+                        <div class="drip{{ rand(3,8) }} hidden-phone"></div>
                         <div class="content-box">
                             <a class="content-head" href="#">{{ $aboutContent->Title }}</a>
                             <p class="content-body">{{ $aboutContent->Content }}</p>
@@ -73,39 +73,13 @@
                 <div class="drip{{ rand(3,8) }} last-drip hidden-phone"></div>
             </div>
 
-            <div id="projects" class="row hide page">
-                <?php for($i=0;$i<4;$i++) { ?>
-                    <div class="span3">
-                        <div class="drip{{ rand(3,8) }} hidden-phone"></div>
-                        <div class="content-box">
-                            <?php if ($i == 0) { ?>
-                                <a class="content-head" href="https://github.com/justincdalton">Github</a>		        			
-                            <?php } else {
-                                echo '<span class="content-head">';
-                                
-                                switch ($i) {
-                                    case 1:
-                                        echo 'More...';
-                                        break;
-                                    case 2:
-                                        echo 'Coming...';
-                                        break;
-                                    case 3:
-                                        echo 'Soon!';
-                                        break;
-                                }
-                            } ?>
-                        </div>
-                    </div>
-                <?php } ?>
-            </div>
-        </div>
+            <div id="projects" class="row hide page"></div>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src={{ URL::to("js/vendor/jquery-1.9.1.min.js") }}><\/script>')</script>
     <script src="{{ URL::to('js/vendor/google-code-prettify/prettify.js') }}"></script>
-    <script src="{{ URL::to('js/main.min.js') }}"></script>
+    <script src="{{ URL::to('js/main.js') }}"></script>
 
     <script type="text/javascript">
         home.init();

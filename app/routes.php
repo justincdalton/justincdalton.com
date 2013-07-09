@@ -11,7 +11,8 @@
 |
 */
 
-Route::controller('/', 'HomeController');
+Route::get('projects', 'HomeController@getProjects');
+Route::get('/', 'HomeController@getIndex');
 
 //Route::get('/', function()
 //{

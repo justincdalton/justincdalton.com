@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost.justincdalton.com'
+	'url' => 'http://dev.justincdalton.com'
 
 
 );
