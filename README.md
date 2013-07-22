@@ -7,7 +7,13 @@ I put the site together as a weekend project and it will continue to be a place 
 It is built based twitter bootstrap which provides the responsive grid layout and I have the styled the site on top of that with my own LESS markup.
 The site interaction is coded with mostly jQuery, as I hoped to provide a simple yet creative UI.
 
-Recent changes - 4/30/2013
+Changelog - 7/8/2013
+----------------------------------------
+
+Added a complete projects page which provides a link to github and is used to highlight various projects I have worked on.
+
+
+Changelog - 4/30/2013
 ----------------------------------------
 
 My most recent update was to take an evening to move the site into a php framework. I chose Laravel 4 because of it's reputation as a well architectured, completely bundled, and low dependency framework.
@@ -18,6 +24,6 @@ Upcoming changes
 
 These are the next few updates I plan to make and technologies I want to use:
 * Implement backbone.js
-* Add a full projects page with descriptions and screenshots
+* ~~Add a full projects page with descriptions and screenshots~~
 * Add individual project pages for those I want to highlight
 * Further integration with Laravel
