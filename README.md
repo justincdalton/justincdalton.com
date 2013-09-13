@@ -7,6 +7,11 @@ I put the site together as a weekend project and it will continue to be a place 
 It is built based twitter bootstrap which provides the responsive grid layout and I have the styled the site on top of that with my own LESS markup.
 The site interaction is coded with mostly jQuery, as I hoped to provide a simple yet creative UI.
 
+Update - 9/11/2013
+----------------------------------------
+
+Just began working on brand new, more thought out design (that I didn't draw up in an hour!), and I am planning to have that out within the next two weeks.
+
 Changelog - 7/8/2013
 ----------------------------------------
 
@@ -23,6 +28,7 @@ Upcoming changes
 ---------------------------------------
 
 These are the next few updates I plan to make and technologies I want to use:
+* Implement new design
 * Implement backbone.js
 * ~~Add a full projects page with descriptions and screenshots~~
 * Add individual project pages for those I want to highlight
