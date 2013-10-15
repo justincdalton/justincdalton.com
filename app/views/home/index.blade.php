@@ -12,10 +12,10 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="{{ URL::to('css/main.css') }}" />
+        <!-- <link rel="stylesheet" href="{{ URL::to('css/main.css') }}" /> -->
 
         <!-- LESS include for dev -->
-        <!--<link rel="stylesheet/less" href="css/main.less">
+        <link rel="stylesheet" href="css/main.css">
         
         <script type="text/javascript">
             less = {
@@ -35,31 +35,40 @@
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+        <![endif]
 
         <!-- Add your site or application content here -->
-    <div class="main">
-        <div id="content" class="container">
-            <header class="row">
-                <nav class="span12">
-                    <a id="contactNav" href="#contact">Contact</a>
-                    <a id="homeNav" href="#home" class="title">Justin C Dalton</a>
-                    <a id="projectsNav" href="#projects">Projects</a>
-                </nav>
-            </header>
-
-            <div id="home" class="row hide page">
-                <?php foreach($aboutContents as $aboutContent) { ?>
-                    <div class="span3">
-                        <div class="drip{{ rand(3,8) }} hidden-phone"></div>
-                        <div class="content-box">
-                            <a class="content-head" href="#">{{ $aboutContent->Title }}</a>
-                            <p class="content-body">{{ $aboutContent->Content }}</p>
-                        </div>
+        <header class="skyline">
+            Justin C Dalton
+        </header>
+        <section id="skills">
+            <div class="container hidden">
+                <div class="row">
+                    <div class="span10 offset2">
+                        <h4>Who am I?</h4>
                     </div>
-                <?php } ?>
-                <div class="drip{{ rand(3,8) }} last-drip hidden-phone"></div>
+                </div>
+                <div class="row">
+                    <div class="span3 offset1">
+                        <h5 class="left">Web Developer</h5>
+                        <ul>
+                            <li>Javscript</li>
+                            <li>jQuery</li>
+                            <li>CSS3 / LESS</li>
+                            <li>HTML5</li>
+                            <li>MVC</li>
+                            <li>C#</li>
+                            <li>PHP</li>
+                        </ul>
+                    </div>
+                    <div class="span4">
+                        <canvas id="fragmentChart" height="400" width="400" data-type="Pie"></canvas> 
+                    </div>
+                    <div class="span4"></div>
+                </div>
             </div>
+        </section>
+
 
             <div id="contact" class="row hide page">
                 <?php foreach($contactLinks as $contactLink) { ?>
@@ -79,10 +88,12 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src={{ URL::to("js/vendor/jquery-1.9.1.min.js") }}><\/script>')</script>
     <script src="{{ URL::to('js/vendor/google-code-prettify/prettify.js') }}"></script>
+    <script src="{{ URL::to('js/vendor/Chart.js') }}"></script>
+    <script src="{{ URL::to('js/vendor/jquery.inview.js') }}"></script>
     <script src="{{ URL::to('js/main.js') }}"></script>
 
     <script type="text/javascript">
-        home.init();
+        window.setTimeout(about.init, 1000);
     </script>
 </body>
 </html>

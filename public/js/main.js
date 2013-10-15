@@ -1,58 +1,36 @@
-var home = function() {
-	var dripHeight = 300;
-	var delay = 300;
-	
-	// add elements to jquery cache
-	var hash = window.location.hash;
-	var navs = $('nav a');
-	var content = $('#content');
-	var pages = content.find('.page');
-	var homePage = pages.filter('#home');
-	var contentBoxes = homePage.find('div.content-box');
-	var contentHeads = homePage.find('a.content-head');
-	var contentBodies = homePage.find('p.content-body');
-	var contentDrips = homePage.find('div[class^=drip]');	
-	
-	var contentTimer;
+var about;
+
+about = function() {
+	var init, showSection, setupFragmentChart;
+	var sections, fragmentChart, fragmentData, fragmentCtx;
 	
 	// public initialization method
-	var init = function() {
-		var self = this;
-		
-		// blur all links on click	
-		$('a').click(function() {
-			$(this).blur();
-		});
-		
-		// show active page content on page load
-		$(function() {
-			loadPage(navs.filter('[href=' + (hash !== "" ? hash : '#home') +']'));	
-		});		
-				
-		// handle click on nav link
-		navs.click(function() {
-			loadPage($(this));
-			return false;
-		});
-		
-		// handle click event on content
-		contentHeads.click(function() {
-			toggleContent($(this).parent('div.content-box'), false);
-			return false;
-		});
-		
-		contentHeads.mouseenter(function() {
-			var contentBox = $(this).parent('div.content-box');			
-			
-			if (contentTimer) {
-				clearTimeout(contentTimer);
-				contentTimer = null;
+	init = function() {
+		sections = $('section');
+
+		sections.on('inview', function(event, isInView) {
+			if (isInView) {
+				showSection($(this))
 			}
-			
-			contentTimer = setTimeout(function() {
-				toggleContent(contentBox, true);	
-			}, delay);					
-		});
+		})
+
+		fragmentData = [
+			{ value: 30, color: '#a6e22e'},
+			{ value: 30, color: '#B16200'},
+			{ value: 40, color: '#00557f'}
+		]
+	}
+
+	showSection = function(section) {
+		section.off('inview').find('.hidden').removeClass('hidden');
+		setupFragmentChart(fragmentData);
+	}
+
+	setupFragmentChart = function(data) {
+		fragmentCtx = $("#fragmentChart").get(0).getContext("2d");
+		fragmentChart = new Chart(fragmentCtx).Pie(data, {
+			segmentStrokeColor: '#d7d7d7'
+		});	
 	}
 	
 	var toggleContent = function(contentBox, keepSelected) {
