@@ -36,23 +36,23 @@ var home = function() {
 		});
 		
 		// handle click event on content
-		contentHeads.click(function() {
-			toggleContent($(this).parent('div.content-box'), false);
-			return false;
-		});
+		// contentHeads.click(function() {
+		// 	toggleContent($(this).parent('div.content-box'), false);
+		// 	return false;
+		// });
 		
-		contentHeads.mouseenter(function() {
-			var contentBox = $(this).parent('div.content-box');			
+		// contentHeads.mouseenter(function() {
+		// 	var contentBox = $(this).parent('div.content-box');			
 			
-			if (contentTimer) {
-				clearTimeout(contentTimer);
-				contentTimer = null;
-			}
+		// 	if (contentTimer) {
+		// 		clearTimeout(contentTimer);
+		// 		contentTimer = null;
+		// 	}
 			
-			contentTimer = setTimeout(function() {
-				toggleContent(contentBox, true);	
-			}, delay);					
-		});
+		// 	contentTimer = setTimeout(function() {
+		// 		toggleContent(contentBox, true);	
+		// 	}, delay);					
+		// });
 	}
 	
 	var toggleContent = function(contentBox, keepSelected) {

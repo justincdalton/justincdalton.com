@@ -44,7 +44,7 @@
                 <nav class="span12">
                     <a id="contactNav" href="#contact">Contact</a>
                     <a id="homeNav" href="#home" class="title">Justin C Dalton</a>
-                    <a id="projectsNav" href="#projects">Projects</a>
+                    <a id="projectsNav" href="https://github.com/justincdalton">GitHub</a>
                 </nav>
             </header>
 
@@ -53,8 +53,8 @@
                     <div class="span3">
                         <div class="drip{{ rand(3,8) }} hidden-phone"></div>
                         <div class="content-box">
-                            <a class="content-head" href="#">{{ $aboutContent->Title }}</a>
-                            <p class="content-body">{{ $aboutContent->Content }}</p>
+                            <span class="content-head" href="#">{{ $aboutContent->Title }}</span>
+                            <!-- <p class="content-body">{{ $aboutContent->Content }}</p> -->
                         </div>
                     </div>
                 <?php } ?>
@@ -79,7 +79,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src={{ URL::to("js/vendor/jquery-1.9.1.min.js") }}><\/script>')</script>
     <script src="{{ URL::to('js/vendor/google-code-prettify/prettify.js') }}"></script>
-    <script src="{{ URL::to('js/main.js') }}"></script>
+    <script src="{{ URL::to('js/main.min.js') }}"></script>
 
     <script type="text/javascript">
         home.init();
