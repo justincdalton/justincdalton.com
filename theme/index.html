@@ -1,7 +1,3 @@
----
-title: Your New Jekyll Site
----
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,7 +8,7 @@ title: Your New Jekyll Site
     <meta name="author" content="Carlos Alvarez">
     <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-    <title>{{ site.data.aboutMe.name }}</title>
+    <title>BlackTie.co | Free Bootstrap Themes</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -40,32 +36,34 @@ title: Your New Jekyll Site
 
 
     <div class="container">
-<!--       <div class="logo">
-        <img src="assets/img/logo.png" width="100" alt="BlackTie.co">
-      </div>
- -->    <div class="row centered">
-      <div class="col-lg-8 col-lg-offset-2 w">
-        <h1>{{ site.data.aboutMe.name }}</h1>
-        <h2>{{ site.data.aboutMe.subtitle }}</h2>
-      </div>
-    </div>
-    <div class="row centered">
-      <div class="col-lg-8 col-lg-offset-2 w tooltip-demo">
-        {% for contactLink in site.data.contactLinks %}
-          <a data-toggle="tooltip" title="{{ contactLink.text }}" href="{{ contactLink.href }}">
-            <i class="fa {{ contactLink.faClass }}"></i></a>
-        {% endfor %}
-      </div>
-    </div>
+    	<div class="logo">
+	    	<img src="assets/img/logo.png" width="100" alt="BlackTie.co">
+    	</div>
+		<div class="row centered">
+			<div class="col-lg-8 col-lg-offset-2 w">
+				<h1>BlackTie.co<br/>SMPL Theme.</h1>
+			</div>
+		</div>
+		<div class="row centered">
+			<div class="col-lg-8 col-lg-offset-2 w tooltip-demo">
+				<a data-toggle="tooltip" title="Dribbble" href="http://dribbble.com/CarlosAlvarez"><i class="fa fa-dribbble"></i></a>
+				<a data-toggle="tooltip" title="Twitter" href="http://twitter.com/BlackTie_co"><i class="fa fa-twitter"></i></a>
+				<a data-toggle="tooltip" title="Premium Themes" href="https://wrapbootstrap.com/user/Basicoh"><i class="fa fa-briefcase"></i></a>
+				<a data-toggle="tooltip" title="Free Themes" href="http://BlackTie.co"><i class="fa fa-heart"></i></a>
+				<a data-toggle="tooltip" title="Blog" href="http://freelance.postach.io"><i class="fa fa-comment"></i></a>
+				<a data-toggle="tooltip" title="Email Me!" href="mailto:carlos@alvarez.is"><i class="fa fa-envelope"></i></a>
+				<a data-toggle="tooltip" title="Newsletter" href="http://eepurl.com/Eck_T"><i class="fa fa-coffee"></i></a>
+			</div>
+		</div>
     </div><!-- /.container -->
     
     <div class="container">
-      <div class="row w centered">
-        <br>    
-        <div class="col-lg-6 col-lg-offset-3">
-          <p>{{ site.data.aboutMe.blurb }}</p>
-        </div>
-      </div>
+    	<div class="row w centered">
+    		<br>		
+    		<div class="col-lg-6 col-lg-offset-3">
+    			<p>Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.</p>
+    		</div>
+    	</div>
     </div>
 
 
@@ -80,14 +78,14 @@ title: Your New Jekyll Site
       selector: "[data-toggle=tooltip]",
       container: "body"
     })
-  </script>
+	</script>
 
 
     <!--BACKSTRETCH-->
     <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
     <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
     <script>
-        $.backstretch("assets/img/bg.png", {speed: 500});
+        $.backstretch("assets/img/bg.jpg", {speed: 500});
     </script>
 
   </body>
