@@ -90,3 +90,11 @@ h1 {
 	font-size: 26px;
 	padding: 12px;
 }
+
+.footer {
+    background: rgba();
+    bottom: 2px;
+    color: #ccc;
+    position: fixed;
+    width: 100%;
+}

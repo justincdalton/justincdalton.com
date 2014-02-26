@@ -43,20 +43,20 @@ title: Your New Jekyll Site
       <div class="logo">
         <div class="profile"></div>
       </div>
-    <div class="row centered">
-      <div class="col-lg-8 col-lg-offset-2 w">
-        <h1>{{ site.data.aboutMe.name }}</h1>
-        <h2>{{ site.data.aboutMe.subtitle }}</h2>
+      <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2 w">
+          <h1>{{ site.data.aboutMe.name }}</h1>
+          <h2>{{ site.data.aboutMe.subtitle }}</h2>
+        </div>
       </div>
-    </div>
-    <div class="row centered">
-      <div class="col-lg-8 col-lg-offset-2 w tooltip-demo">
-        {% for contactLink in site.data.contactLinks %}
-          <a data-toggle="tooltip" title="{{ contactLink.text }}" href="{{ contactLink.href }}">
-            <i class="fa {{ contactLink.faClass }}"></i></a>
-        {% endfor %}
+      <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2 w tooltip-demo">
+          {% for contactLink in site.data.contactLinks %}
+            <a data-toggle="tooltip" title="{{ contactLink.text }}" href="{{ contactLink.href }}">
+              <i class="fa {{ contactLink.faClass }}"></i></a>
+          {% endfor %}
+        </div>
       </div>
-    </div>
     </div><!-- /.container -->
     
     <div class="container">
@@ -65,6 +65,12 @@ title: Your New Jekyll Site
         <div class="col-lg-6 col-lg-offset-3">
           <p>{{ site.data.aboutMe.blurb }}</p>
         </div>
+      </div>
+    </div>
+
+    <div class="container footer">
+      <div class="row centered">
+      &copy; {{ site.time | date: '%Y' }} Justin C Dalton | Photo by <a href="http://jimkastkeat.com">Jim Kast-Keat</a> | Bootstrap theme by <a href="http://blacktie.co">BlackTie.co</a>
       </div>
     </div>
 
