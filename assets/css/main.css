@@ -70,12 +70,21 @@ a:after {
 	margin-top: 25px;
 }
 
+.profile {
+    background: url('/assets/img/logo.png');
+    border-radius: 50%;
+    box-shadow: 0 0 3px #333;
+    height: 110px;
+    margin: 0 auto;
+    width: 110px;
+}
+
 h1 {
 	font-size: 70px;
 }
 
 .w {
-	margin-top: 60px;
+	margin-top: 40px;
 }
 .w i {
 	font-size: 26px;
