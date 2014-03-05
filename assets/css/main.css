@@ -93,8 +93,7 @@ h1 {
 
 .footer {
     background: rgba();
-    bottom: 2px;
     color: #ccc;
-    position: fixed;
+    margin-top: 11%;
     width: 100%;
 }
