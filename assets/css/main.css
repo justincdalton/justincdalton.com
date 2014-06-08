@@ -75,8 +75,11 @@ a:after {
     border-radius: 50%;
     box-shadow: 0 0 3px #333;
     height: 110px;
-    margin: 0 auto;
     width: 110px;
+}
+
+.logo .profile {
+    margin: 0 auto;
 }
 
 h1 {
