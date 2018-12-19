@@ -1,0 +1,10 @@
+.container {
+  font-family: Space Mono, mono;
+  position: relative;
+
+  span {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+  }
+}

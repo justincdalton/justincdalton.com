@@ -4,11 +4,14 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Image from '../components/image'
 import SEO from '../components/seo'
+import ExplodingText from '../components/ExplodingText'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
-    <h1>Justin C Dalton</h1>
+    <h1>
+      <ExplodingText speed="fast">justin c dalton</ExplodingText>
+    </h1>
     <p>I'm a Lead Web Application Engineer bringing</p>
     <p>STRUCTURE</p>
     <p>and</p>
