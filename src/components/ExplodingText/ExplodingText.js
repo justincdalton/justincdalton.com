@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import styles from './exploding-text.module.scss'
 
 const speeds = {
-  fast: 20,
-  medium: 10,
-  slow: 4,
+  fast: 0.05,
+  medium: 0.25,
+  slow: 1,
 }
 
 const randomNumber = (lower, upper) =>
@@ -14,6 +14,7 @@ const randomNumber = (lower, upper) =>
 
 const ExplodingText = ({ children, initExploded, height, speed }) => {
   const [hasExploded, setHasExploded] = useState(initExploded)
+  const [oops, setOops] = useState(0)
 
   const letters = children.split('')
 
@@ -33,6 +34,7 @@ const ExplodingText = ({ children, initExploded, height, speed }) => {
     if (hasExploded !== initExploded) {
       setHasExploded(initExploded)
     }
+    setOops(oops + 1)
   }
 
   return (
@@ -49,7 +51,11 @@ const ExplodingText = ({ children, initExploded, height, speed }) => {
       {letters.map((letter, index) => {
         const style = {
           left: `${index}ch`,
-          transition: `all ${(index + 1) / speeds[speed]}s linear`,
+          transition: `all ${(index + 1) * speeds[speed]}s linear`,
+        }
+
+        if (!hasExploded && oops > 1 && oops % 7 === 0) {
+          style.left = `${letters.length - index - 1}ch`
         }
 
         if (hasExploded) {
